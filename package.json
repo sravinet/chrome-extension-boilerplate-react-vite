@@ -29,7 +29,11 @@
     "prepare": "husky",
     "update-version": "run-script-os",
     "update-version:win32": "bash update_version.sh",
-    "update-version:default": "./update_version.sh"
+    "update-version:default": "./update_version.sh",
+    "copy_env": "run-script-os",
+    "copy_env:win32": "bash copy_env.sh",
+    "copy_env:default": "./copy_env.sh",
+    "postinstall": "pnpm copy_env"
   },
   "dependencies": {
     "react": "18.3.1",
