@@ -43,6 +43,10 @@
 - [Install dependency](#install-dependency)
     - [For root](#install-dependency-for-root)
     - [For module](#install-dependency-for-module)
+- [Env Variables](#env-variables)
+  - [Add new](#env-variables-new)
+  - [Access for command](#env-variables-access)
+  - [Set via CLI](#env-variables-cli-set)
 - [Community](#community)
 - [Reference](#reference)
 - [Star History](#star-history)
@@ -114,20 +118,20 @@ You have to do it on every browser launch.</i>
 `package` - Name of the package you want to install e.g. `nodemon` \
 `module-name` - You can find it inside each `package.json` under the key `name`, e.g. `@extension/content-script`, you can use only `content-script` without `@extension/` prefix
 
-## Env Variables
+## Env Variables: <a name="env-variables"></a>
 
-1. Copy `.example.env` and past it as `.env` in the same path
-2. Add a new record inside `.env`
-3. Add this key with type for value to `vite-env.d.ts` (root) to `ImportMetaEnv`
-4. Then you can use it with `import.meta.env.{YOUR_KEY}` like with standard [Vite Env](https://vitejs.dev/guide/env-and-mode)
+### Add new: <a name="env-variables-new"></a>
+  1. Add a new record inside `.env`
+  2. Now you're able to access it via `process.env.YOUR_KEY`
 
-#### If you want to set it for each package independently:
+### Create access for command: <a name="env-variables-access"></a>
+  1. Let's use `pnpm with-env ...` before that command \
+    `"example": "pnpm with-env turbo example"`
 
-1. Create `.env` inside that package
-2. Open related `vite.config.mts` and add `envDir: '.'` at the end of this config
-3. Rest steps like above
+### Set via CLI: <a name="env-variables-cli-set"></a> 
+  1. Add it as next args like: `pnpm with-env ... NEXT_VALUE=new_data`
 
-#### Remember you can't use global and local at the same time for the same package(It will be overwritten)
+#### `__DEV__` and `__FIREFOX__` have default `false` value
 
 ## Structure <a name="structure"></a>
 
