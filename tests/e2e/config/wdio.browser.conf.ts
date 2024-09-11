@@ -4,7 +4,7 @@ import url from 'node:url';
 import fs from 'node:fs/promises';
 import { getChromeExtensionPath, getFirefoxExtensionPath } from '../utils/extension-path';
 
-const isFirefox = process.env.__FIREFOX__ === 'true';
+const isFirefox = process.env.CLI_CEB_FIREFOX === 'true';
 const isCI = process.env.CI === 'true';
 
 const archiveName = isFirefox ? 'extension.xpi' : 'extension.zip';
