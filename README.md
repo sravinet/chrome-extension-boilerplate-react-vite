@@ -132,6 +132,8 @@ You have to do it on every browser launch.</i>
   1. Add it as next args like: `pnpm with-env ... NEXT_VALUE=new_data`
 
 #### `__DEV__` and `__FIREFOX__` have default `false` value
+#### All CLI values are overwriting in each script call, that's mean you will have only that values which you defined in current call
+#### Values from previous call are being removed
 
 ## Structure <a name="structure"></a>
 
