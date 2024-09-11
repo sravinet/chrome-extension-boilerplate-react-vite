@@ -1,6 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": ["__FIREFOX__", "__DEV__", "CEB_*"],
   "tasks": {
     "ready": {
       "dependsOn": ["^ready"],
