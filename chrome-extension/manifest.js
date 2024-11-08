@@ -9,7 +9,16 @@ const sidePanelConfig = {
   side_panel: {
     default_path: 'side-panel/index.html',
   },
-  permissions: ['sidePanel'],
+  permissions: ['sidePanel', 'windows'],
+  commands: {
+    _execute_action_with_side_panel: {
+      suggested_key: {
+        default: 'Ctrl+B',
+        mac: 'Command+B',
+      },
+      description: 'Open side panel',
+    },
+  },
 };
 
 /**

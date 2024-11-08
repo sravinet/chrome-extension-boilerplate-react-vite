@@ -37,6 +37,29 @@ const Popup = () => {
       });
   };
 
+  const toggleSidePanel = async () => {
+    try {
+      if (chrome.sidePanel) {
+        // Get the current window
+        const currentWindow = await chrome.windows.getCurrent();
+
+        // Only proceed if we have a valid window ID
+        if (currentWindow.id) {
+          // Just try to open it - Chrome will handle the toggle behavior
+          await chrome.sidePanel.open({
+            windowId: currentWindow.id,
+          });
+        } else {
+          console.warn('No valid window ID found');
+        }
+      } else {
+        console.warn('Side panel API is not available');
+      }
+    } catch (error) {
+      console.error('Error toggling side panel:', error);
+    }
+  };
+
   return (
     <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
       <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
@@ -53,6 +76,14 @@ const Popup = () => {
           }
           onClick={injectContentScript}>
           Click to inject Content Script
+        </button>
+        <button
+          className={
+            'font-bold mt-4 py-1 px-4 rounded shadow hover:scale-105 ' +
+            (isLight ? 'bg-blue-200 text-black' : 'bg-gray-700 text-white')
+          }
+          onClick={toggleSidePanel}>
+          Toggle Side Panel
         </button>
         <ToggleButton>Toggle theme</ToggleButton>
       </header>
