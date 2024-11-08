@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chrome Extension Icon -->
+  <g transform="translate(10, 5)">
+    <path d="M24 2H8C4.68629 2 2 4.68629 2 8V24C2 27.3137 4.68629 30 8 30H24C27.3137 30 30 27.3137 30 24V8C30 4.68629 27.3137 2 24 2Z" 
+          fill="#6B7280" stroke="#E5E7EB" stroke-width="2"/>
+    <path d="M16 8L22 16L16 24L10 16L16 8Z" fill="#93C5FD" stroke="#60A5FA" stroke-width="2"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="50" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F3F4F6">
+    Chrome Extension
+  </text>
+</svg>
