@@ -2,6 +2,7 @@ import '@src/Popup.css';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
 import type { ComponentPropsWithoutRef } from 'react';
+import { Icon } from '@extension/ui';
 
 const notificationOptions = {
   type: 'basic',
@@ -60,6 +61,10 @@ const Popup = () => {
     }
   };
 
+  const openOptions = () => {
+    chrome.runtime.openOptionsPage();
+  };
+
   return (
     <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
       <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
@@ -84,6 +89,15 @@ const Popup = () => {
           }
           onClick={toggleSidePanel}>
           Toggle Side Panel
+        </button>
+        <button
+          className={
+            'font-bold mt-4 py-1 px-4 rounded shadow hover:scale-105 flex items-center gap-2 ' +
+            (isLight ? 'bg-blue-200 text-black' : 'bg-gray-700 text-white')
+          }
+          onClick={openOptions}>
+          <Icon name="mdi:cog" />
+          Options
         </button>
         <ToggleButton>Toggle theme</ToggleButton>
       </header>
