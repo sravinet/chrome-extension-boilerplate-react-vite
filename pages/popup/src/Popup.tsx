@@ -101,6 +101,7 @@ const Popup = () => {
         </button>
         <ToggleButton>Toggle theme</ToggleButton>
       </header>
+      <div className="font-sans text-lg">This text should be in Raleway again</div>
     </div>
   );
 };
